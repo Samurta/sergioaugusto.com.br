@@ -1,7 +1,6 @@
-/* Design System Murta — fontes servidas pelo próprio site (OFL), nenhum serviço externo */
-@font-face{font-family:"Montserrat";src:url("fontes/Montserrat.ttf") format("truetype");font-weight:100 900;font-display:swap}
-@font-face{font-family:"Open Sans";src:url("fontes/OpenSans.ttf") format("truetype");font-weight:300 800;font-display:swap}
-@font-face{font-family:"Kaushan Script";src:url("fontes/KaushanScript-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+/* Design System Murta — fontes servidas pelo próprio site (OFL, woff2 latino), nenhum serviço externo */
+@font-face{font-family:"Montserrat";src:url("fontes/Montserrat.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Open Sans";src:url("fontes/OpenSans.woff2") format("woff2");font-weight:300 800;font-display:swap}
 
 :root{
   --azul:#0F4A83;
@@ -9,73 +8,105 @@
   --creme:#FDF3E6;
   --dourado:#E4BD3C; /* só sobre azul */
   --tinta:#1F1F1F;
+  --tinta-2:#4A4A4A;
   --borda:#E8D9C4;
   --larg:68rem;
+  --leitura:40rem;   /* ~70 caracteres por linha */
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:1.0625rem;line-height:1.65;color:var(--tinta);background:var(--creme)}
-h1,h2,h3{font-family:"Montserrat",system-ui,sans-serif;font-weight:700;line-height:1.25;color:var(--azul);margin:0 0 .6em}
-h2{font-size:clamp(1.5rem,3vw,2rem)}
-h3{font-size:1.15rem;font-weight:600}
-p{margin:0 0 1em}
-a{color:var(--azul);text-underline-offset:3px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:400;font-size:1.125rem;line-height:1.7;color:var(--tinta);background:var(--creme);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3{font-family:"Montserrat",system-ui,sans-serif;font-weight:600;line-height:1.2;letter-spacing:-.015em;color:var(--azul);margin:0 0 .6em;text-wrap:balance}
+h2{font-size:clamp(1.65rem,1.2rem + 1.6vw,2.25rem);margin-bottom:1.1em}
+h3{font-size:.95rem;font-weight:600;letter-spacing:0}
+p{margin:0 0 1.1em;text-wrap:pretty}
+strong{font-weight:600}
+a{color:var(--azul);text-underline-offset:3px;text-decoration-thickness:1px}
 a:focus-visible,.botao:focus-visible{outline:3px solid var(--dourado);outline-offset:3px}
 img{max-width:100%;height:auto;display:block}
 .pular{position:absolute;left:-999px}
 .pular:focus{left:1rem;top:1rem;background:#fff;padding:.5rem 1rem;z-index:10}
-.conteiner{max-width:var(--larg);margin:0 auto;padding:0 1.25rem}
+.conteiner{max-width:var(--larg);margin:0 auto;padding:0 1.5rem}
 
 /* Cabeçalho (azul: dourado permitido) */
 .topo{background:var(--azul);color:#fff;position:sticky;top:0;z-index:5}
 .topo .conteiner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
-.marca{display:flex;align-items:center;gap:.7rem;color:#fff;text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.05rem}
-.marca img{width:36px;height:36px}
-.menu{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;list-style:none;margin:0;padding:0}
-.menu a{color:#fff;text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:600;font-size:.92rem}
+.marca{display:flex;align-items:center;gap:.75rem;color:#fff;text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:600;font-size:1rem;letter-spacing:.005em}
+.marca img{width:34px;height:34px}
+.menu{display:flex;flex-wrap:wrap;gap:.25rem 1.75rem;list-style:none;margin:0;padding:0}
+.menu a{color:#fff;text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.9rem;letter-spacing:.01em}
 .menu a:hover{color:var(--dourado)}
 
 /* Início */
-.inicio{background:var(--azul);color:#fff;padding:4rem 0 4.5rem}
+.inicio{background:var(--azul);color:#fff;padding:4.5rem 0 5rem}
 .inicio .duas{align-items:center}
-.inicio h1{color:#fff;font-size:clamp(1.7rem,3.6vw,2.5rem);margin-bottom:.5em}
-.linha-prof{font-family:"Montserrat",sans-serif;color:var(--dourado);font-weight:600;text-transform:uppercase;letter-spacing:.18em;font-size:.85rem;margin-bottom:1.4rem}
+.inicio h1{color:#fff;font-size:clamp(2rem,1.3rem + 2.6vw,3rem);line-height:1.12;letter-spacing:-.02em;margin-bottom:.55em;max-width:15em}
+.linha-prof{font-family:"Montserrat",sans-serif;color:var(--dourado);font-weight:500;letter-spacing:.1em;font-size:.85rem;margin-bottom:1.6rem}
+.inicio .resumo{font-size:1.2rem;line-height:1.6;color:#EAF0F7;max-width:30em;margin-bottom:1.6rem}
 .inicio .retrato{border-radius:.75rem;box-shadow:0 0 0 4px var(--folhagem)}
-.botao{display:inline-block;background:var(--creme);color:var(--azul);font-family:"Montserrat",sans-serif;font-weight:700;padding:.85rem 1.4rem;border-radius:.5rem;text-decoration:none;margin-top:.8rem}
+.acoes{display:flex;flex-wrap:wrap;gap:.75rem}
+.botao{display:inline-block;background:var(--creme);color:var(--azul);font-family:"Montserrat",sans-serif;font-weight:600;font-size:.98rem;letter-spacing:.005em;padding:.9rem 1.45rem;border-radius:.5rem;text-decoration:none}
 .botao:hover{background:#fff}
-.botao.secundario{background:transparent;color:#fff;border:2px solid var(--dourado);margin-left:.6rem}
+.botao.secundario{background:transparent;color:#fff;border:2px solid var(--dourado);padding:calc(.9rem - 2px) calc(1.45rem - 2px)}
 
 /* Seções sobre creme (sem dourado) */
-section{padding:4rem 0;scroll-margin-top:4.5rem}
+section{padding:4.5rem 0;scroll-margin-top:4.5rem}
 section.alterna{background:#fff}
-.duas{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:2.5rem;align-items:start}
+.duas{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:3rem;align-items:start}
+.leitura{max-width:var(--leitura)}
+.abre{font-size:1.25rem;line-height:1.6;color:var(--tinta)}
 .foto{border-radius:.75rem}
-.contatos{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.25rem;margin:1.5rem 0}
-.cartao{background:#fff;border:1px solid var(--borda);border-radius:.75rem;padding:1.25rem}
-.cartao a{font-weight:600;font-size:1.1rem}
-.cartao p{font-size:.93rem;margin:.6rem 0 0}
-.aviso{border-left:4px solid var(--azul);background:#fff;padding:1rem 1.25rem;border-radius:0 .5rem .5rem 0;font-size:.97rem}
+
+/* Como funciona: um item por parágrafo, com a palavra-chave em destaque */
+.passos{list-style:none;margin:0;padding:0}
+.passos li{padding:1rem 0;border-top:1px solid var(--borda)}
+.passos li:first-child{border-top:0;padding-top:0}
+.passos strong{display:block;font-family:"Montserrat",sans-serif;font-weight:600;font-size:.95rem;color:var(--azul);margin-bottom:.2rem}
+
+/* Contato */
+.contatos{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.25rem;margin:0 0 1.5rem}
+.cartao{background:#fff;border:1px solid var(--borda);border-radius:.75rem;padding:1.4rem 1.5rem}
+.cartao h3{font-size:.95rem;color:var(--azul);margin-bottom:.45rem}
+.cartao a{font-weight:600;font-size:1.1rem;word-break:break-word}
+.cartao p{font-size:1rem;line-height:1.6;margin:0}
+.aviso{border-left:4px solid var(--azul);background:#fff;padding:1.1rem 1.4rem;border-radius:0 .5rem .5rem 0;font-size:1rem;margin:0}
 
 /* Marcador de revisão: some quando todo [VERIFICAR] for resolvido */
 .verificar{background:#FFF1B8;color:#5A4500;padding:0 .25em;border-radius:.2em;font-weight:600}
 
 /* Rodapé (azul: dourado permitido) */
-.rodape{background:var(--folhagem);color:#fff;padding:2.5rem 0;font-size:.92rem}
+.rodape{background:var(--folhagem);color:#fff;padding:2.5rem 0;font-size:.92rem;line-height:1.6}
 .rodape a{color:var(--dourado)}
 .rodape p{margin:.3em 0}
 
 /* Página de privacidade */
 .texto-legal{max-width:46rem}
-.texto-legal h2{font-size:1.3rem;margin-top:2rem}
-.texto-legal table{border-collapse:collapse;width:100%;font-size:.93rem;margin:1rem 0}
-.texto-legal th,.texto-legal td{border:1px solid var(--borda);padding:.5rem .6rem;text-align:left;vertical-align:top}
-.texto-legal th{background:#fff;font-family:"Montserrat",sans-serif}
+.texto-legal h1{font-size:clamp(1.9rem,1.3rem + 2vw,2.5rem);letter-spacing:-.02em}
+.texto-legal h2{font-size:1.3rem;margin:2.4rem 0 .7rem;letter-spacing:-.01em}
+.texto-legal h2.parte{font-size:1.75rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--borda)}
+.texto-legal ul{padding-left:1.25rem}
+.texto-legal li{margin-bottom:.5rem}
+.texto-legal .ficha{background:#fff;border:1px solid var(--borda);border-radius:.75rem;padding:1.25rem 1.5rem;font-size:1rem}
+.texto-legal .ficha dl{display:grid;grid-template-columns:max-content 1fr;gap:.6rem 1.25rem;margin:0}
+.texto-legal .ficha dt{font-family:"Montserrat",sans-serif;font-weight:600;font-size:.875rem;color:var(--azul);padding-top:.15em;max-width:14rem}
+.texto-legal .ficha dd{margin:0}
+.texto-legal table{border-collapse:collapse;table-layout:fixed;width:100%;font-size:1rem;line-height:1.55;margin:1rem 0 1.4rem;background:#fff}
+.texto-legal th,.texto-legal td{border:1px solid var(--borda);padding:.7rem .85rem;text-align:left;vertical-align:top}
+.texto-legal th:first-child,.texto-legal td:first-child{width:52%}
+.texto-legal th{font-family:"Montserrat",sans-serif;font-weight:600;font-size:.92rem;color:var(--azul)}
 
 @media (max-width:720px){
-  .duas{grid-template-columns:1fr}
+  body{font-size:1.0625rem}
+  section{padding:3.5rem 0}
+  .inicio{padding:2.5rem 0 3.5rem}
+  .duas{grid-template-columns:1fr;gap:2rem}
   .inicio .retrato{max-width:18rem;order:-1}
+  .inicio .resumo{font-size:1.1rem}
+  .abre{font-size:1.15rem}
   .foto{max-width:20rem}
   .menu{display:none} /* em celular a página é curta; a navegação é a rolagem */
-  .botao.secundario{margin-left:0}
+  .conteiner{padding:0 1.25rem}
+  .texto-legal .ficha dl{grid-template-columns:1fr;gap:.15rem}
+  .texto-legal .ficha dd{margin-bottom:.6rem}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
