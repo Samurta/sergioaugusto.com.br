@@ -1,162 +1,81 @@
-/* Site de Sérgio Augusto Murta Coutinho · v2
-   Fontes servidas pelo próprio site (OFL), nenhum serviço externo.
-   Serifa (Source Serif 4) para leitura e títulos; Open Sans só na interface. */
-@font-face{font-family:"Source Serif 4";src:url("fontes/SourceSerif4.woff2") format("woff2");font-weight:200 900;font-style:normal;font-display:swap}
-@font-face{font-family:"Source Serif 4";src:url("fontes/SourceSerif4-Italico.woff2") format("woff2");font-weight:200 900;font-style:italic;font-display:swap}
-@font-face{font-family:"Open Sans";src:url("fontes/OpenSans.woff2") format("woff2");font-weight:300 800;font-display:swap}
+/* Design System Murta — fontes servidas pelo próprio site (OFL), nenhum serviço externo */
+@font-face{font-family:"Montserrat";src:url("fontes/Montserrat.ttf") format("truetype");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Open Sans";src:url("fontes/OpenSans.ttf") format("truetype");font-weight:300 800;font-display:swap}
+@font-face{font-family:"Kaushan Script";src:url("fontes/KaushanScript-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
 
 :root{
-  --papel:#FBF4EA;
-  --papel-2:#F4EADC;
-  --tinta:#1D2430;
-  --tinta-2:#4A5260;   /* texto secundário: 7,4:1 sobre o papel */
   --azul:#0F4A83;
-  --azul-escuro:#0B365F;
-  --dourado:#E4BD3C;   /* só filete/sublinhado, ou texto sobre azul */
-  --filete:#DCCDB8;
-  --serifa:"Source Serif 4",Charter,"Sitka Text",Cambria,Georgia,serif;
-  --sans:"Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --margem:clamp(1.25rem,5vw,5rem);
-  --larg:78rem;
+  --folhagem:#0D4072;
+  --creme:#FDF3E6;
+  --dourado:#E4BD3C; /* só sobre azul */
+  --tinta:#1F1F1F;
+  --borda:#E8D9C4;
+  --larg:68rem;
 }
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--serifa);font-size:clamp(1.0625rem,.95rem + .35vw,1.1875rem);line-height:1.6;font-optical-sizing:auto;text-rendering:optimizeLegibility}
-img{display:block;max-width:100%;height:auto}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:1.0625rem;line-height:1.65;color:var(--tinta);background:var(--creme)}
+h1,h2,h3{font-family:"Montserrat",system-ui,sans-serif;font-weight:700;line-height:1.25;color:var(--azul);margin:0 0 .6em}
+h2{font-size:clamp(1.5rem,3vw,2rem)}
+h3{font-size:1.15rem;font-weight:600}
 p{margin:0 0 1em}
-a{color:var(--azul);text-decoration-thickness:1px;text-underline-offset:.2em}
-a:hover{text-decoration-thickness:2px}
-:focus-visible{outline:2px solid var(--azul);outline-offset:4px;border-radius:2px}
-::selection{background:#F3DF9C}
-.pular{position:absolute;left:-999px;top:0}
-.pular:focus{left:1rem;top:1rem;background:#fff;padding:.5rem 1rem;z-index:10;font-family:var(--sans)}
+a{color:var(--azul);text-underline-offset:3px}
+a:focus-visible,.botao:focus-visible{outline:3px solid var(--dourado);outline-offset:3px}
+img{max-width:100%;height:auto;display:block}
+.pular{position:absolute;left:-999px}
+.pular:focus{left:1rem;top:1rem;background:#fff;padding:.5rem 1rem;z-index:10}
+.conteiner{max-width:var(--larg);margin:0 auto;padding:0 1.25rem}
 
-.faixa{max-width:var(--larg);margin:0 auto;padding:0 var(--margem)}
-.rotulo{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2);margin:0 0 .9rem}
+/* Cabeçalho (azul: dourado permitido) */
+.topo{background:var(--azul);color:#fff;position:sticky;top:0;z-index:5}
+.topo .conteiner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.marca{display:flex;align-items:center;gap:.7rem;color:#fff;text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.05rem}
+.marca img{width:36px;height:36px}
+.menu{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;list-style:none;margin:0;padding:0}
+.menu a{color:#fff;text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:600;font-size:.92rem}
+.menu a:hover{color:var(--dourado)}
 
-/* Cabeçalho */
-.topo{border-bottom:1px solid var(--filete);background:var(--papel)}
-.topo .faixa{display:flex;align-items:baseline;justify-content:space-between;gap:.75rem 1.5rem;padding-top:1.4rem;padding-bottom:1.2rem;flex-wrap:wrap}
-.marca{font-family:var(--serifa);font-size:1.2rem;font-weight:500;color:var(--tinta);text-decoration:none;letter-spacing:-.005em}
-.menu{display:flex;gap:1.75rem;list-style:none;margin:0;padding:0;font-family:var(--sans);font-size:.9rem}
-.menu a{display:inline-block;color:var(--tinta);text-decoration:none;padding:.75rem .5rem;margin:-.75rem -.5rem}
-.menu a:hover{text-decoration:underline;text-decoration-color:var(--azul);text-underline-offset:.35em}
+/* Início */
+.inicio{background:var(--azul);color:#fff;padding:4rem 0 4.5rem}
+.inicio .duas{align-items:center}
+.inicio h1{color:#fff;font-size:clamp(1.7rem,3.6vw,2.5rem);margin-bottom:.5em}
+.linha-prof{font-family:"Montserrat",sans-serif;color:var(--dourado);font-weight:600;text-transform:uppercase;letter-spacing:.18em;font-size:.85rem;margin-bottom:1.4rem}
+.inicio .retrato{border-radius:.75rem;box-shadow:0 0 0 4px var(--folhagem)}
+.botao{display:inline-block;background:var(--creme);color:var(--azul);font-family:"Montserrat",sans-serif;font-weight:700;padding:.85rem 1.4rem;border-radius:.5rem;text-decoration:none;margin-top:.8rem}
+.botao:hover{background:#fff}
+.botao.secundario{background:transparent;color:#fff;border:2px solid var(--dourado);margin-left:.6rem}
 
-/* Abertura */
-.abertura .faixa{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:2rem;align-items:end;padding-top:clamp(3rem,8vw,7rem);padding-bottom:clamp(3.5rem,8vw,7.5rem)}
-.abertura .texto{grid-column:1/7;padding-bottom:1rem}
-.abertura h1{font-family:var(--serifa);font-weight:400;font-size:clamp(2.5rem,1.4rem + 4.2vw,4.4rem);line-height:1.03;letter-spacing:-.02em;margin:0 0 1.75rem;color:var(--tinta)}
-.oficio{font-size:1.3rem;line-height:1.4;margin:0 0 .35rem}
-.registro{font-family:var(--sans);font-size:.82rem;color:var(--tinta-2);letter-spacing:.02em;margin:0 0 2.25rem}
-.chamada{font-size:1.15em;max-width:30em;margin-bottom:2.25rem}
-.acao{font-family:var(--sans);margin:0;max-width:30rem}
-.acao a{display:inline-block;padding:.6rem 0;font-size:1.125rem;font-weight:600;text-decoration:underline;text-underline-offset:.25em;text-decoration-thickness:1px}
-.acao span{display:block;font-size:.875rem;line-height:1.5;color:var(--tinta)}
-.abertura figure{grid-column:8/13;margin:0}
+/* Seções sobre creme (sem dourado) */
+section{padding:4rem 0;scroll-margin-top:4.5rem}
+section.alterna{background:#fff}
+.duas{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:2.5rem;align-items:start}
+.foto{border-radius:.75rem}
+.contatos{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.25rem;margin:1.5rem 0}
+.cartao{background:#fff;border:1px solid var(--borda);border-radius:.75rem;padding:1.25rem}
+.cartao a{font-weight:600;font-size:1.1rem}
+.cartao p{font-size:.93rem;margin:.6rem 0 0}
+.aviso{border-left:4px solid var(--azul);background:#fff;padding:1rem 1.25rem;border-radius:0 .5rem .5rem 0;font-size:.97rem}
 
-/* Seções */
-.secao{border-top:1px solid var(--filete);scroll-margin-top:1rem}
-.secao .faixa{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:2rem;padding-top:clamp(3.5rem,8vw,7.5rem);padding-bottom:clamp(3.5rem,8vw,7.5rem)}
-.secao .lado{grid-column:1/5}
-.secao .corpo{grid-column:6/13;max-width:38rem}
-.secao h2{font-family:var(--serifa);font-weight:400;font-size:clamp(1.9rem,1.3rem + 1.8vw,2.6rem);line-height:1.1;letter-spacing:-.015em;margin:0 0 2rem;color:var(--tinta)}
+/* Marcador de revisão: some quando todo [VERIFICAR] for resolvido */
+.verificar{background:#FFF1B8;color:#5A4500;padding:0 .25em;border-radius:.2em;font-weight:600}
 
-/* Percurso */
-.datas{list-style:none;margin:0;padding:0;font-family:var(--sans);font-size:.92rem;line-height:1.45}
-.datas li{display:grid;grid-template-columns:3.5rem 1fr;gap:.75rem;padding:.85rem 0;border-top:1px solid var(--filete)}
-.datas li:last-child{border-bottom:1px solid var(--filete)}
-.datas b{font-family:var(--serifa);font-weight:600;font-size:1.05rem;color:var(--azul)}
-/* Frase dele: o único momento tipográfico grande da página */
-.frase .faixa{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:2rem;padding-top:clamp(1rem,4vw,3rem);padding-bottom:clamp(4rem,9vw,8rem)}
-.frase blockquote{grid-column:3/11;margin:0}
-.frase p{font-style:italic;font-size:clamp(1.75rem,1rem + 3.2vw,2.9rem);line-height:1.22;letter-spacing:-.015em;color:var(--azul);margin:0;text-wrap:balance}
-
-/* Sala */
-.sala{margin:0}
-.sala img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 70%}
-.sala figcaption{font-style:italic;font-size:.95rem;color:var(--tinta-2);margin-top:.75rem}
-.sala-faixa{padding-bottom:clamp(3.5rem,8vw,7.5rem)}
-.sala-faixa .faixa{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:2rem}
-.sala-faixa .sala{grid-column:1/-1}
-
-/* Listas de definição (como funciona, contato) */
-.itens{margin:0}
-.itens>div{display:grid;grid-template-columns:11rem 1fr;gap:1.5rem;padding:1.4rem 0;border-top:1px solid var(--filete)}
-.itens>div:last-child{border-bottom:1px solid var(--filete)}
-.itens dt{font-family:var(--sans);font-size:.875rem;font-weight:600;color:var(--azul);padding-top:.25em}
-/* Como funciona: título em cima e quatro itens em duas colunas, para não repetir o molde das outras seções */
-.empilhada .lado,.empilhada .corpo{grid-column:1/-1;max-width:none}
-.itens.quatro{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:4rem}
-.itens.quatro>div{grid-template-columns:1fr;gap:.5rem;border-bottom:0}
-.itens.quatro>div:nth-last-child(-n+2){border-bottom:1px solid var(--filete)}
-.itens.quatro dd{max-width:30rem}
-.itens dd{margin:0}
-.itens dd p:last-child{margin:0}
-.itens .grande{font-size:1.3rem}
-.itens address{font-style:normal}
-
-.crise{margin-top:2.5rem;color:var(--tinta);max-width:36rem}
-.crise strong{font-weight:600}
-
-/* Rodapé */
-.rodape{background:var(--azul-escuro);color:#E9EEF5;font-family:var(--sans);font-size:.88rem;line-height:1.6}
-.rodape .faixa{display:grid;grid-template-columns:auto 1fr auto;gap:1.5rem 2rem;align-items:start;padding-top:3rem;padding-bottom:3rem}
-.rodape img{width:32px;height:32px;opacity:.9}
-.rodape p{margin:0 0 .3rem}
-.rodape strong{font-family:var(--serifa);font-weight:500;font-size:1.1rem;color:#fff;display:block;margin-bottom:.2rem}
+/* Rodapé (azul: dourado permitido) */
+.rodape{background:var(--folhagem);color:#fff;padding:2.5rem 0;font-size:.92rem}
 .rodape a{color:var(--dourado)}
-.rodape .direita{text-align:right}
+.rodape p{margin:.3em 0}
 
 /* Página de privacidade */
-.legal .faixa{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:2rem;padding-top:clamp(3rem,7vw,6rem);padding-bottom:clamp(3.5rem,8vw,7rem)}
-.legal h1{grid-column:1/-1;font-family:var(--serifa);font-weight:400;font-size:clamp(2.5rem,1.4rem + 4.2vw,4.4rem);line-height:1.05;letter-spacing:-.02em;margin:0 0 .6rem}
-.legal .data{grid-column:1/-1;font-family:var(--sans);font-size:.85rem;color:var(--tinta-2);margin:0 0 3rem}
-.sumario{grid-column:1/4;align-self:stretch;font-family:var(--sans);font-size:.88rem;line-height:1.4}
-.sumario ol{list-style:none;margin:0;padding:0;position:sticky;top:2rem}
-.sumario li{border-top:1px solid var(--filete)}
-.sumario li:last-child{border-bottom:1px solid var(--filete)}
-.sumario a{display:block;padding:.6rem 0;color:var(--tinta);text-decoration:none}
-.sumario a:hover{color:var(--azul)}
-.texto-legal{grid-column:5/13;max-width:42rem;font-size:1.0625rem}
-.texto-legal h2{font-family:var(--serifa);font-weight:500;font-size:1.65rem;line-height:1.2;letter-spacing:-.01em;margin:3rem 0 1rem;scroll-margin-top:1.5rem}
-.texto-legal h2:first-child{margin-top:0}
-.texto-legal h2.parte{font-weight:400;font-size:2.1rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--filete)}
-.texto-legal ul{padding-left:1.2rem}
-.texto-legal li{margin-bottom:.6rem}
-.ficha{margin:0 0 1rem;font-size:1rem}
-.ficha>div{display:grid;grid-template-columns:10rem 1fr;gap:1rem;padding:.8rem 0;border-top:1px solid var(--filete)}
-.ficha>div:last-child{border-bottom:1px solid var(--filete)}
-.ficha dt{font-family:var(--sans);font-size:.875rem;font-weight:600;color:var(--azul);padding-top:.2em}
-.ficha dd{margin:0}
-.texto-legal table{border-collapse:collapse;width:100%;font-size:.95rem;margin:1.25rem 0 1.5rem}
-.texto-legal th,.texto-legal td{border-top:1px solid var(--filete);border-bottom:1px solid var(--filete);padding:.75rem .9rem .75rem 0;text-align:left;vertical-align:top}
-.texto-legal th{font-family:var(--sans);font-size:.875rem;font-weight:600;color:var(--azul)}
-.texto-legal td:first-child{width:55%}
-.voltar{font-family:var(--sans);font-size:.92rem;margin-top:3rem}
+.texto-legal{max-width:46rem}
+.texto-legal h2{font-size:1.3rem;margin-top:2rem}
+.texto-legal table{border-collapse:collapse;width:100%;font-size:.93rem;margin:1rem 0}
+.texto-legal th,.texto-legal td{border:1px solid var(--borda);padding:.5rem .6rem;text-align:left;vertical-align:top}
+.texto-legal th{background:#fff;font-family:"Montserrat",sans-serif}
 
-@media (max-width:60rem){
-  .abertura .faixa,.secao .faixa,.sala-faixa .faixa,.legal .faixa,.frase .faixa{grid-template-columns:1fr}
-  .abertura .texto,.abertura figure,.secao .lado,.secao .corpo,.sala-faixa .sala,.sumario,.texto-legal{grid-column:1/-1}
-  .abertura figure{margin-top:3rem;max-width:30rem}
-  .frase blockquote{grid-column:1/-1}
-  .secao .lado{margin-bottom:1rem}
-  .secao h2{margin-bottom:1.5rem}
-  .sumario{margin-bottom:2.5rem}
-  .sumario ol{position:static}
+@media (max-width:720px){
+  .duas{grid-template-columns:1fr}
+  .inicio .retrato{max-width:18rem;order:-1}
+  .foto{max-width:20rem}
+  .menu{display:none} /* em celular a página é curta; a navegação é a rolagem */
+  .botao.secundario{margin-left:0}
 }
-@media (max-width:40rem){
-  .topo .faixa{padding-top:1.1rem;padding-bottom:1rem}
-  .menu{gap:1.25rem;font-size:.9rem}
-  .itens>div,.ficha>div{grid-template-columns:1fr;gap:.3rem}
-  .itens.quatro{grid-template-columns:1fr}
-  .itens.quatro>div:nth-last-child(2){border-bottom:0}
-  .rodape .faixa{grid-template-columns:1fr}
-  .rodape .direita{text-align:left}
-  .texto-legal table,.texto-legal tbody,.texto-legal tr,.texto-legal td{display:block;width:100%!important}
-  .texto-legal tr:first-child{display:none}
-  .texto-legal tr{border-top:1px solid var(--filete);padding:.75rem 0}
-  .texto-legal td{border:0;padding:.15rem 0}
-  .texto-legal td:first-child{font-weight:600}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-@media print{.topo nav,.sumario,.pular{display:none}body{background:#fff}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
