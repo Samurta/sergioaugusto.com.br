@@ -47,7 +47,8 @@ img{max-width:100%;height:auto;display:block}
 .acoes{display:flex;flex-wrap:wrap;gap:.75rem}
 .botao{display:inline-block;background:var(--creme);color:var(--azul);font-family:"Montserrat",sans-serif;font-weight:600;font-size:.98rem;letter-spacing:.005em;padding:.9rem 1.45rem;border-radius:.5rem;text-decoration:none}
 .botao:hover{background:#fff}
-.botao .icone{display:inline-block;vertical-align:-.28em;margin-right:.55rem}
+.botao .icone{display:inline-block;vertical-align:-.28em;margin-left:.55rem}
+.cartao .icone{display:inline-block;vertical-align:-.3em;margin-right:.5rem}
 .botao.secundario{background:transparent;color:#fff;border:2px solid var(--dourado);padding:calc(.9rem - 2px) calc(1.45rem - 2px)}
 
 /* Seções sobre creme (sem dourado) */
