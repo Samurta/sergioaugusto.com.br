@@ -29,7 +29,7 @@ img{max-width:100%;height:auto;display:block}
 /* Cabeçalho (azul: dourado permitido) */
 .topo{background:var(--azul);color:#fff;position:sticky;top:0;z-index:5}
 .topo .conteiner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
-.marca{display:flex;align-items:center;gap:.7rem;color:#fff;text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:600}
+.marca{display:flex;align-items:center;gap:.7rem;color:#fff;text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.05rem}
 .marca img{width:36px;height:36px}
 .menu{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;list-style:none;margin:0;padding:0}
 .menu a{color:#fff;text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:600;font-size:.92rem}
@@ -38,7 +38,7 @@ img{max-width:100%;height:auto;display:block}
 /* Início */
 .inicio{background:var(--azul);color:#fff;padding:4rem 0 4.5rem}
 .inicio .duas{align-items:center}
-.inicio h1{font-family:"Kaushan Script","Montserrat",cursive;font-weight:400;color:#fff;font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:.4em}
+.inicio h1{color:#fff;font-size:clamp(1.7rem,3.6vw,2.5rem);margin-bottom:.5em}
 .linha-prof{font-family:"Montserrat",sans-serif;color:var(--dourado);font-weight:600;text-transform:uppercase;letter-spacing:.18em;font-size:.85rem;margin-bottom:1.4rem}
 .inicio .retrato{border-radius:.75rem;box-shadow:0 0 0 4px var(--folhagem)}
 .botao{display:inline-block;background:var(--creme);color:var(--azul);font-family:"Montserrat",sans-serif;font-weight:700;padding:.85rem 1.4rem;border-radius:.5rem;text-decoration:none;margin-top:.8rem}
