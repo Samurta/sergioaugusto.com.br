@@ -1,0 +1,81 @@
+/* Design System Murta — fontes servidas pelo próprio site (OFL), nenhum serviço externo */
+@font-face{font-family:"Montserrat";src:url("fontes/Montserrat.ttf") format("truetype");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Open Sans";src:url("fontes/OpenSans.ttf") format("truetype");font-weight:300 800;font-display:swap}
+@font-face{font-family:"Kaushan Script";src:url("fontes/KaushanScript-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+
+:root{
+  --azul:#0F4A83;
+  --folhagem:#0D4072;
+  --creme:#FDF3E6;
+  --dourado:#E4BD3C; /* só sobre azul */
+  --tinta:#1F1F1F;
+  --borda:#E8D9C4;
+  --larg:68rem;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:1.0625rem;line-height:1.65;color:var(--tinta);background:var(--creme)}
+h1,h2,h3{font-family:"Montserrat",system-ui,sans-serif;font-weight:700;line-height:1.25;color:var(--azul);margin:0 0 .6em}
+h2{font-size:clamp(1.5rem,3vw,2rem)}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0 0 1em}
+a{color:var(--azul);text-underline-offset:3px}
+a:focus-visible,.botao:focus-visible{outline:3px solid var(--dourado);outline-offset:3px}
+img{max-width:100%;height:auto;display:block}
+.pular{position:absolute;left:-999px}
+.pular:focus{left:1rem;top:1rem;background:#fff;padding:.5rem 1rem;z-index:10}
+.conteiner{max-width:var(--larg);margin:0 auto;padding:0 1.25rem}
+
+/* Cabeçalho (azul: dourado permitido) */
+.topo{background:var(--azul);color:#fff;position:sticky;top:0;z-index:5}
+.topo .conteiner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.marca{display:flex;align-items:center;gap:.7rem;color:#fff;text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:600}
+.marca img{width:36px;height:36px}
+.menu{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;list-style:none;margin:0;padding:0}
+.menu a{color:#fff;text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:600;font-size:.92rem}
+.menu a:hover{color:var(--dourado)}
+
+/* Início */
+.inicio{background:var(--azul);color:#fff;padding:4rem 0 4.5rem}
+.inicio .duas{align-items:center}
+.inicio h1{font-family:"Kaushan Script","Montserrat",cursive;font-weight:400;color:#fff;font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:.4em}
+.linha-prof{font-family:"Montserrat",sans-serif;color:var(--dourado);font-weight:600;text-transform:uppercase;letter-spacing:.18em;font-size:.85rem;margin-bottom:1.4rem}
+.inicio .retrato{border-radius:.75rem;box-shadow:0 0 0 4px var(--folhagem)}
+.botao{display:inline-block;background:var(--creme);color:var(--azul);font-family:"Montserrat",sans-serif;font-weight:700;padding:.85rem 1.4rem;border-radius:.5rem;text-decoration:none;margin-top:.8rem}
+.botao:hover{background:#fff}
+.botao.secundario{background:transparent;color:#fff;border:2px solid var(--dourado);margin-left:.6rem}
+
+/* Seções sobre creme (sem dourado) */
+section{padding:4rem 0;scroll-margin-top:4.5rem}
+section.alterna{background:#fff}
+.duas{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:2.5rem;align-items:start}
+.foto{border-radius:.75rem}
+.contatos{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.25rem;margin:1.5rem 0}
+.cartao{background:#fff;border:1px solid var(--borda);border-radius:.75rem;padding:1.25rem}
+.cartao a{font-weight:600;font-size:1.1rem}
+.cartao p{font-size:.93rem;margin:.6rem 0 0}
+.aviso{border-left:4px solid var(--azul);background:#fff;padding:1rem 1.25rem;border-radius:0 .5rem .5rem 0;font-size:.97rem}
+
+/* Marcador de revisão: some quando todo [VERIFICAR] for resolvido */
+.verificar{background:#FFF1B8;color:#5A4500;padding:0 .25em;border-radius:.2em;font-weight:600}
+
+/* Rodapé (azul: dourado permitido) */
+.rodape{background:var(--folhagem);color:#fff;padding:2.5rem 0;font-size:.92rem}
+.rodape a{color:var(--dourado)}
+.rodape p{margin:.3em 0}
+
+/* Página de privacidade */
+.texto-legal{max-width:46rem}
+.texto-legal h2{font-size:1.3rem;margin-top:2rem}
+.texto-legal table{border-collapse:collapse;width:100%;font-size:.93rem;margin:1rem 0}
+.texto-legal th,.texto-legal td{border:1px solid var(--borda);padding:.5rem .6rem;text-align:left;vertical-align:top}
+.texto-legal th{background:#fff;font-family:"Montserrat",sans-serif}
+
+@media (max-width:720px){
+  .duas{grid-template-columns:1fr}
+  .inicio .retrato{max-width:18rem;order:-1}
+  .foto{max-width:20rem}
+  .menu{display:none} /* em celular a página é curta; a navegação é a rolagem */
+  .botao.secundario{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
