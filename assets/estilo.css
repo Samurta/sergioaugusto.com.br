@@ -56,7 +56,6 @@ section{padding:4.5rem 0;scroll-margin-top:4.5rem}
 section.alterna{background:#fff}
 .duas{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:3rem;align-items:start}
 .leitura{max-width:var(--leitura)}
-.abre{font-size:1.25rem;line-height:1.6;color:var(--tinta)}
 .foto{border-radius:.75rem}
 
 /* Como funciona: um item por parágrafo, com a palavra-chave em destaque */
@@ -69,9 +68,9 @@ section.alterna{background:#fff}
 .contatos{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.25rem;margin:0 0 1.5rem}
 .cartao{background:#fff;border:1px solid var(--borda);border-radius:.75rem;padding:1.4rem 1.5rem}
 .cartao h3{font-size:.95rem;color:var(--azul);margin-bottom:.45rem}
-.cartao a{font-weight:600;font-size:1.1rem;word-break:break-word}
-.cartao p{font-size:1rem;line-height:1.6;margin:0}
-.aviso{border-left:4px solid var(--azul);background:#fff;padding:1.1rem 1.4rem;border-radius:0 .5rem .5rem 0;font-size:1rem;margin:0}
+.cartao a{font-weight:600;font-size:1.0625rem;word-break:break-word}
+.cartao p{font-size:1.0625rem;line-height:1.6;margin:0}
+.aviso{border-left:4px solid var(--azul);background:#fff;padding:1.1rem 1.4rem;border-radius:0 .5rem .5rem 0;font-size:1.0625rem;margin:0}
 
 /* Marcador de revisão: some quando todo [VERIFICAR] for resolvido */
 .verificar{background:#FFF1B8;color:#5A4500;padding:0 .25em;border-radius:.2em;font-weight:600}
@@ -104,7 +103,6 @@ section.alterna{background:#fff}
   .duas{grid-template-columns:1fr;gap:2rem}
   .inicio .retrato{max-width:18rem;order:-1}
   .inicio .resumo{font-size:1.1rem}
-  .abre{font-size:1.15rem}
   .foto{max-width:20rem}
   .menu{display:none} /* em celular a página é curta; a navegação é a rolagem */
   .conteiner{padding:0 1.25rem}
